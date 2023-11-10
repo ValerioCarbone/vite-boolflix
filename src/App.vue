@@ -11,8 +11,6 @@ export default {
   },
   data() {
     return {
-      API_KEY: store.api_key,
-      currentQuery: store.query
     }
   },
   methods: {
@@ -20,8 +18,8 @@ export default {
       axios
         .get('https://api.themoviedb.org/3/search/movie', {
           params: {
-            api_key: this.API_KEY,
-            query: this.currentQuery
+            api_key: store.api_key,
+            query: store.query
           }
         }).then(res => {
           store.searchedItems = res.data.results
