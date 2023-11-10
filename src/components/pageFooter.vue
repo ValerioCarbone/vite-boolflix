@@ -1,6 +1,21 @@
 <script>
+import { store } from '../store'
 export default {
-
+    data() {
+        return {
+            store,
+            currentQuery: ''
+        }
+    },
+    methods: {
+        search() {
+            store.query = this.currentQuery
+            this.$emit('search')
+        }
+    }
+    // updated() {
+    //     store.query = this.currentQuery
+    // }
 }
 </script>
 
@@ -9,8 +24,9 @@ export default {
         <div class="container">
             <h3 class="header-title">Boolflix</h3>
             <div>
-                <input class="search-bar" type="search" placeholder="Cosa vuoi guardare?">
-                <button class="btn">Cerca</button>
+                <input v-model="currentQuery" class="search-bar" type="search" placeholder="Cosa vuoi guardare?"
+                    @keyup.enter="search">
+                <button @click="search" class="btn">Cerca</button>
             </div>
         </div>
     </header>
@@ -30,7 +46,7 @@ export default {
 }
 
 .page-header {
-    max-width: 100%;
+    width: 100%;
     background-color: black;
 }
 
