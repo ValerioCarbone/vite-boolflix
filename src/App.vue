@@ -1,6 +1,15 @@
 <script>
+import pageFooter from './components/pageFooter.vue'
+
+export default {
+  components: {
+    pageFooter
+  }
+}
 </script>
 
-<template></template>
+<template>
+  <pageFooter />
+</template>
 
 <style scoped></style>
