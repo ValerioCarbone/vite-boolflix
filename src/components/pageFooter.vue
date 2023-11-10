@@ -13,9 +13,6 @@ export default {
             this.$emit('search')
         }
     }
-    // updated() {
-    //     store.query = this.currentQuery
-    // }
 }
 </script>
 
@@ -35,12 +32,6 @@ export default {
 <style scoped lang="scss">
 @use '../style/partials/variable' as *;
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 .btn {
     color: $main-color;
 }
@@ -51,7 +42,7 @@ export default {
 }
 
 .container {
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;

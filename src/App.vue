@@ -1,6 +1,6 @@
 <script>
 import pageFooter from './components/pageFooter.vue'
-import pageMain from './components/main.vue'
+import pageMain from './components/pageMain.vue'
 import axios from 'axios'
 import { store } from './store'
 
@@ -23,7 +23,6 @@ export default {
           }
         }).then(res => {
           store.searchedItems = res.data.results
-          console.log(store.query, store.searchedItems)
         })
     }
   }
@@ -35,10 +34,4 @@ export default {
   <pageMain />
 </template>
 
-<style scoped lang="scss">
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-</style>
+<style scoped lang="scss"></style>
