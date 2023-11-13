@@ -3,7 +3,6 @@ import pageHeader from './components/pageHeader.vue'
 import pageMain from './components/pageMain.vue'
 import axios from 'axios'
 import { store } from './store'
-import { faLanguage } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   components: {
