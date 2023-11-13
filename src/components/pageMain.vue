@@ -24,21 +24,9 @@ export default {
 <template>
     <main class="page-main">
         <div class="container">
-            <div class="col-6 card-container">
-                <h2 class="card-title">Movies</h2>
-                <div class="movies">
-                    <card class="col-6" v-for="movie in movies" :item="movie" />
-                    <p v-if="!store.movies.length" class="error-msg">Nessun film trovato</p>
-                </div>
-
-            </div>
-            <div class="col-6 card-container">
-                <h2 class="card-title">Series</h2>
-                <div class="series">
-                    <card v-for="serie in series" :item="serie" />
-                    <p v-if="!store.series.length" class="error-msg">Nessuna serie trovata</p>
-                </div>
-
+            <div class="items">
+                <card class="col-3" v-for="movie in movies" :item="movie" />
+                <card class="col-3" v-for="serie in series" :item="serie" />
             </div>
         </div>
     </main>
@@ -47,7 +35,6 @@ export default {
 <style scoped lang="scss">
 .page-main {
     background-color: black;
-    padding-bottom: 40px;
 }
 
 .error-msg {
@@ -58,12 +45,11 @@ export default {
 
 .container {
     background-color: rgb(41, 40, 40);
-    display: flex;
 
 }
 
-.col-6 {
-    flex-basis: calc(100% / 2);
+.col-3 {
+    flex-basis: calc(100% / 4);
     flex-grow: 1;
 }
 
@@ -73,15 +59,13 @@ export default {
 
 }
 
-.movies,
-.series {
+.items {
     display: flex;
     color: white;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 36px 0;
     height: 100%;
-    row-gap: 10px;
-    justify-content: center;
+    row-gap: 36px;
 }
 
 .card-container {
