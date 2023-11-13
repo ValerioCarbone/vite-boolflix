@@ -21,7 +21,7 @@ export default {
         <div class="container">
             <h3 class="header-title">Boolflix</h3>
             <div>
-                <input v-model="currentQuery" class="search-bar" type="search" placeholder="Cosa vuoi guardare?"
+                <input v-model.trim="currentQuery" class="search-bar" type="search" placeholder="Cosa vuoi guardare?"
                     @keyup.enter="search">
                 <button @click="search" class="btn">Cerca</button>
             </div>

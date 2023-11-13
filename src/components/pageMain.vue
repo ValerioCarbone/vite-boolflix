@@ -11,8 +11,6 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.page-main {}
-
 .container {
     background-color: rgb(41, 40, 40);
 }
