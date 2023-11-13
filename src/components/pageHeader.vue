@@ -37,7 +37,6 @@ export default {
 }
 
 .page-header {
-    width: 100%;
     background-color: black;
 }
 
@@ -45,7 +44,7 @@ export default {
     padding: 30px;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
