@@ -38,7 +38,8 @@ export default {
     <main class="page-main">
         <div class="container">
             <div class="items">
-                <h2 v-if="!store.query & store.movies.length === 0 & store.series.length === 0">Benvenuto in Boolflix</h2>
+                <h1 v-if="!store.query & store.movies.length === 0 & store.series.length === 0" class="welcomeMessage">
+                    Benvenuto in Boolflix</h1>
                 <div class="title" v-if="store.movies.length > 0">Film</div>
                 <card class="col-3" v-for="movie in movies" :item="movie" :key="movie.id" />
                 <div class="title" v-if="store.series.length > 0">Serie</div>
@@ -61,7 +62,7 @@ export default {
 
 .page-main {
     background-color: $bg-main-color;
-    overflow: hidden;
+    position: relative;
 }
 
 .title {
@@ -85,5 +86,12 @@ export default {
 .errorMsg {
     font-size: 20px;
     padding-top: 40px
+}
+
+.welcomeMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 </style>
