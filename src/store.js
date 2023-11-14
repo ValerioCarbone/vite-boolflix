@@ -12,5 +12,6 @@ export const store = reactive({
         en: '/en.png',
         es: '/es.png',
         fr: '/fr.png'
-    }
+    },
+    errorMsg: false
 })

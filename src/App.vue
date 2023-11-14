@@ -39,6 +39,15 @@ export default {
           })
 
       }
+    },
+    isEmpty() {
+      // if (store.movies.length === 0 & store.series.length === 0) {
+      //   store.errorMsg === true
+      // }
+      // else if (store.movies.length != 0 & store.series.length != 0) {
+      //   store.errorMsg === false
+      // }
+      console.log('ciao')
     }
   }
 }
@@ -46,7 +55,7 @@ export default {
 
 <template>
   <pageHeader @search="fetchItems" />
-  <pageMain />
+  <pageMain @search="isEmpty" />
 </template>
 
 <style lang="scss">

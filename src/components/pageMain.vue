@@ -7,6 +7,16 @@ export default {
             store
         }
     },
+    methods: {
+        // isEmpty() {
+        //     if (store.movies.length === 0 & store.series.length === 0) {
+        //         store.errorMsg === true
+        //     }
+        //     else {
+        //         store.errorMsg === false
+        //     }
+        // }
+    },
     components: {
         card
     },
@@ -22,37 +32,30 @@ export default {
 </script>
 
 <template>
-    <main class="page-main">
+    <main class="page-main" @search="isEmpty()">
         <div class="container">
             <div class="items">
-                <div class="title">Movies</div>
+                <div class="title" v-if="store.movies.length > 0">Film</div>
                 <card class="col-3" v-for="movie in movies" :item="movie" :key="movie.id" />
-                <div class="title">Series</div>
+                <div class="title" v-if="store.series.length > 0">Serie</div>
                 <card class="col-3" v-for="serie in series" :item="serie" :key="serie.id" />
+                <p v-if="store.errorMsg">Nessuna corrispondenza alla ricerca</p>
             </div>
         </div>
     </main>
 </template>
 
 <style scoped lang="scss">
-.page-main {
-    background-color: black;
-}
-
-.error-msg {
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
+@use '../style/partials/variable' as *;
 
 .container {
-    background-color: rgb(41, 40, 40);
+    max-width: 1700px;
+    margin: 0 auto;
 
 }
 
-.col-3 {
-    flex-basis: calc(100% / 4);
-    flex-grow: 1;
+.page-main {
+    background-color: $bg-main-color;
 }
 
 .title {
@@ -71,5 +74,7 @@ export default {
     padding: 36px 0;
     height: 100%;
     row-gap: 36px;
+    column-gap: 20px;
+    justify-content: space-evenly;
 }
 </style>
