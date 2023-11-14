@@ -4,18 +4,12 @@ import { store } from '../store'
 export default {
     data() {
         return {
-            store
+            store,
+            welcomeMsg: true
         }
     },
     methods: {
-        // isEmpty() {
-        //     if (store.movies.length === 0 & store.series.length === 0) {
-        //         store.errorMsg === true
-        //     }
-        //     else {
-        //         store.errorMsg === false
-        //     }
-        // }
+
     },
     components: {
         card
@@ -26,6 +20,15 @@ export default {
         },
         series() {
             return this.store.series
+        },
+        isEmpty() {
+            if (store.movies.length === 0 & store.series.length === 0 & store.query != '') {
+                return true
+            }
+            else {
+                return false
+            }
+
         }
     }
 }
@@ -35,11 +38,12 @@ export default {
     <main class="page-main">
         <div class="container">
             <div class="items">
+                <h2 v-if="!store.query & store.movies.length === 0 & store.series.length === 0">Benvenuto in Boolflix</h2>
                 <div class="title" v-if="store.movies.length > 0">Film</div>
                 <card class="col-3" v-for="movie in movies" :item="movie" :key="movie.id" />
                 <div class="title" v-if="store.series.length > 0">Serie</div>
                 <card class="col-3" v-for="serie in series" :item="serie" :key="serie.id" />
-                <p v-if="store.errorMsg">Nessuna corrispondenza alla ricerca</p>
+                <p class="errorMsg" v-if="isEmpty">Nessuna corrispondenza alla ricerca</p>
             </div>
         </div>
     </main>
@@ -49,10 +53,9 @@ export default {
 @use '../style/partials/variable' as *;
 
 .container {
-    max-width: 1700px;
-    margin: 0 auto;
+    padding: 20px;
     overflow: auto;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 100px);
 
 }
 
@@ -74,9 +77,13 @@ export default {
     display: flex;
     color: white;
     flex-wrap: wrap;
-    padding: 36px 0;
     row-gap: 36px;
-    column-gap: 20px;
+    column-gap: 36px;
     justify-content: space-evenly;
+}
+
+.errorMsg {
+    font-size: 20px;
+    padding-top: 40px
 }
 </style>

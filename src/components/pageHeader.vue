@@ -19,7 +19,9 @@ export default {
 <template>
     <header class="page-header">
         <div class="container">
-            <h3 class="header-title">Boolflix</h3>
+            <a href="http://localhost:5173">
+                <h3 class="header-title">Boolflix</h3>
+            </a>
             <div>
                 <input v-model.trim="currentQuery" class="search-bar" type="search" placeholder="Cosa vuoi guardare?"
                     @keyup.enter="search">
@@ -32,21 +34,23 @@ export default {
 <style scoped lang="scss">
 @use '../style/partials/variable' as *;
 
-.btn {
-    color: $main-color;
+a {
+    text-decoration: none;
+
 }
+
 
 .page-header {
     background-color: black;
-    height: 80px;
+    height: 100px;
 }
 
 .container {
-    padding: 30px;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
 }
 
 .header-title {
@@ -56,7 +60,21 @@ export default {
 
 }
 
+.btn {
+    color: $main-color;
+    height: 26px;
+    padding: 0 10px;
+    border-radius: 20px 20px;
+    border: none;
+
+}
+
 .search-bar {
     margin-right: 10px;
+    height: 26px;
+    border-radius: 15px;
+    padding: 0 8px;
+    background-color: white;
+    font-size: 12px;
 }
 </style>
