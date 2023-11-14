@@ -25,8 +25,10 @@ export default {
     <main class="page-main">
         <div class="container">
             <div class="items">
-                <card class="col-3" v-for="movie in movies" :item="movie" />
-                <card class="col-3" v-for="serie in series" :item="serie" />
+                <div class="title">Movies</div>
+                <card class="col-3" v-for="movie in movies" :item="movie" :key="movie.id" />
+                <div class="title">Series</div>
+                <card class="col-3" v-for="serie in series" :item="serie" :key="serie.id" />
             </div>
         </div>
     </main>
@@ -53,9 +55,12 @@ export default {
     flex-grow: 1;
 }
 
-.card-title {
+.title {
     text-align: center;
-    color: white;
+    flex-basis: 100%;
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 700;
 
 }
 
@@ -66,11 +71,5 @@ export default {
     padding: 36px 0;
     height: 100%;
     row-gap: 36px;
-}
-
-.card-container {
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
 }
 </style>
