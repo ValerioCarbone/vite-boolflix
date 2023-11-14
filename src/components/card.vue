@@ -59,7 +59,7 @@ export default {
                     <font-awesome-icon :icon="['far', 'star']" v-for="star in 5 - roundedVote " :key="star"
                         class="yellow" />
                 </li>
-                <li><img v-if="flags" class="flags" :src="flags">
+                <li><span class="card-title">Lingua</span><img v-if="flags" class="flags" :src="flags">
                     <p v-else>{{ item.original_language }}</p>
                 </li>
             </ul>

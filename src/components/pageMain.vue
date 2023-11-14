@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-    <main class="page-main" @search="isEmpty()">
+    <main class="page-main">
         <div class="container">
             <div class="items">
                 <div class="title" v-if="store.movies.length > 0">Film</div>
@@ -51,11 +51,14 @@ export default {
 .container {
     max-width: 1700px;
     margin: 0 auto;
+    overflow: auto;
+    height: calc(100vh - 80px);
 
 }
 
 .page-main {
     background-color: $bg-main-color;
+    overflow: hidden;
 }
 
 .title {
@@ -72,7 +75,6 @@ export default {
     color: white;
     flex-wrap: wrap;
     padding: 36px 0;
-    height: 100%;
     row-gap: 36px;
     column-gap: 20px;
     justify-content: space-evenly;

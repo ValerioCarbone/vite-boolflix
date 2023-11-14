@@ -38,6 +38,7 @@ export default {
 
 .page-header {
     background-color: black;
+    height: 80px;
 }
 
 .container {

@@ -44,7 +44,7 @@ export default {
       // if (store.movies.length === 0 & store.series.length === 0) {
       //   store.errorMsg === true
       // }
-      // else if (store.movies.length != 0 & store.series.length != 0) {
+      // else if (store.movies.length != 0 || store.series.length != 0) {
       //   store.errorMsg === false
       // }
       console.log('ciao')
