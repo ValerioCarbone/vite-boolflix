@@ -19,7 +19,7 @@ export default {
 <template>
     <header class="page-header">
         <div class="container">
-            <a href="http://localhost:5173">
+            <a href="#">
                 <h3 class="header-title">Boolflix</h3>
             </a>
             <div>
